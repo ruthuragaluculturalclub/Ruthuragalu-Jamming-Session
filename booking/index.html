@@ -8,14 +8,22 @@
 <style>
 :root{--ink:#292d20;--muted:#74765f;--line:#dedcc9;--card:#fffdf5;--bg:#f4f1e8;--olive:#596344;--gold:#b49a5a}
 *{box-sizing:border-box}
-body{margin:0;background:linear-gradient(135deg,#fbf4e7,#f5e8d2 55%,#fbf5e9);color:var(--ink);font-family:Georgia,"Times New Roman",serif}
+body{margin:0;background:radial-gradient(circle at 12% 8%,#fffaf0 0,transparent 30%),radial-gradient(circle at 90% 88%,#ead9c2 0,transparent 28%),linear-gradient(135deg,#fbf4e7,#f5e8d2 55%,#fbf5e9);color:var(--ink);font-family:Georgia,"Times New Roman",serif}
 main{max-width:650px;margin:0 auto;padding:22px 14px 44px}
-.card{background:var(--card);border:1px solid #e5d8bd;border-radius:22px;padding:22px;box-shadow:0 14px 38px #78582a18}
-header{text-align:center;padding:8px 4px 20px}
+.card{position:relative;overflow:hidden;background:var(--card);border:1px solid #d9c7a8;border-radius:22px;padding:22px;box-shadow:0 14px 38px #78582a18}
+.card:before{content:"";position:absolute;inset:8px;border:1px solid #eadfc9;border-radius:16px;pointer-events:none}
+header{text-align:center;padding:13px 4px 22px;position:relative}
+.brand-mark{display:flex;align-items:center;justify-content:center;gap:10px;color:#a78b55;font:12px Arial,sans-serif;letter-spacing:2px;margin:0 auto 12px}
+.brand-mark:before,.brand-mark:after{content:"";height:1px;width:42px;background:linear-gradient(90deg,transparent,#c5aa72)}
+.brand-mark:after{transform:scaleX(-1)}
+.edition{display:inline-block;margin-top:13px;padding:6px 13px;border:1px solid #d8c49f;border-radius:30px;color:#80683d;background:#fbf5e9;font:700 10px Arial,sans-serif;letter-spacing:2px}
 .eyebrow{font:700 11px Arial,sans-serif;letter-spacing:3px;color:var(--gold)}
-h1{font-size:30px;letter-spacing:1px;margin:9px 0 6px}
+h1{font-size:30px;letter-spacing:2px;margin:9px 0 6px;color:#3b3a2b}
 header p{font:14px Arial,sans-serif;color:var(--muted);margin:0}
-.event{background:#f1e8dc;border-radius:13px;padding:15px;text-align:center;margin:0 0 20px}
+.event{position:relative;background:linear-gradient(135deg,#f4ecdf,#eee1ce);border:1px solid #e5d6bd;border-radius:15px;padding:18px 15px;text-align:center;margin:0 0 22px}
+.event:before{content:"✦";display:block;color:#aa8d55;font-size:15px;margin-bottom:5px}
+.event strong{display:block;font:700 18px Arial,sans-serif}
+.event span{display:block;font:13px Arial,sans-serif;color:var(--muted);margin-top:6px}
 .event strong{display:block;font:700 18px Arial,sans-serif}
 .event span{display:block;font:13px Arial,sans-serif;color:var(--muted);margin-top:6px}
 label{display:block;font:700 13px Arial,sans-serif;margin:15px 0 7px}
@@ -45,9 +53,11 @@ footer{text-align:center;margin-top:16px;color:var(--muted);font:12px Arial,sans
 <body>
 <main><section class="card">
 <header>
+<div class="brand-mark">♪ &nbsp; MUSIC · MEMORIES · MOMENTS &nbsp; ♫</div>
 <div class="eyebrow">A TELUGU CULTURAL CLUB</div>
 <h1>RUTHURAGALU</h1>
-<p>Gen Z’s Retro Jamming Session · 2nd Edition</p>
+<p>Gen Z’s Retro Jamming Session</p>
+<div class="edition">THE 2ND JAMMING EDITION</div>
 </header>
 <div class="event">
 <strong>22 November 2026 · Sunday</strong>
