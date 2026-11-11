@@ -137,6 +137,41 @@ header .brand-title[lang="te"]{
   text-shadow:0 1px 0 #fffaf0,0 2px 2px #5b3b2030 !important;
   font-weight:900 !important;
 }
+
+/* Final unified stage layout: title above the date, both fully visible */
+.band-stage{height:250px; overflow:hidden}
+.band-member{height:120px; bottom:52px}
+.band-member .head{top:0}
+.stage-title{
+  top:14px;
+  z-index:5;
+  max-width:94%;
+  padding:9px 20px 10px;
+  background:linear-gradient(135deg,#a8875cF5,#c3a477F5);
+  border:1px solid #f0d9a8;
+  box-shadow:0 5px 14px #3c291c35,inset 0 0 0 2px #fff4d655;
+  color:#fffdf5;
+}
+.stage-title span{color:#fff3d4}
+.stage-label{
+  z-index:7;
+  bottom:0;
+  padding:9px 8px 10px;
+  min-height:48px;
+  background:linear-gradient(90deg,#3f2b1bf5,#6d4c2df5,#3f2b1bf5);
+  color:#fffaf0;
+}
+@media(max-width:520px){
+  .band-stage{height:230px}
+  .band-member{height:100px;bottom:48px}
+  .stage-title{top:12px;padding:8px 12px 9px;max-width:96%;font-size:12px;letter-spacing:.13em}
+  .stage-title span{font-size:16px;letter-spacing:.045em}
+  .stage-label{padding:8px 5px 9px;min-height:47px}
+  .stage-label strong{font-size:11px}
+  .stage-label span{font-size:10px}
+  .stage-label small{font-size:7px}
+}
+
 </style>
 </head>
 <body>
