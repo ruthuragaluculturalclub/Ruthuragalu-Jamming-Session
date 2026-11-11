@@ -87,7 +87,6 @@ footer{text-align:center;margin-top:16px;color:var(--muted);font:12px Arial,sans
 <iframe name="rrApiFrame" id="rrApiFrame" title="Booking submission" style="display:none"></iframe>
 <script>
 const API_URL="https://script.google.com/macros/s/AKfycbw8BjUN-H-i06lOG6qMVufi-KWrMhR45fxSaG6thMPynlgVCMkzedYSOOW4BvzVW9EUow/exec";
-const UPI_ID="7306177456@ybl";
 let quote=null, requestNumber=0, waitingForPost=false;
 
 function showMessage(message,isError=false){
@@ -129,7 +128,6 @@ function copyValue(value,message){
   navigator.clipboard.writeText(value).then(()=>alert(message)).catch(()=>prompt('Copy this value:',value));
  }else prompt('Copy this value:',value);
 }
-function copyAmount(){if(!quote){alert('Please wait for the amount to load.');return;}copyValue(Number(quote.amount).toFixed(2),'Payable amount copied');}
 
 document.getElementById('quantity').addEventListener('change',updateQuote);
 document.getElementById('bookingForm').addEventListener('submit',function(ev){
