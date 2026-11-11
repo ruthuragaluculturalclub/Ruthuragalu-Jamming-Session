@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f4f1e8">
+<title>Ruthuragalu | Ticket Booking</title>
+<style>
+:root{--ink:#292d20;--muted:#74765f;--line:#dedcc9;--card:#fffdf5;--bg:#f4f1e8;--olive:#596344;--gold:#b49a5a}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(135deg,#fbf4e7,#f5e8d2 55%,#fbf5e9);color:var(--ink);font-family:Georgia,"Times New Roman",serif}
+main{max-width:650px;margin:0 auto;padding:22px 14px 44px}
+.card{background:var(--card);border:1px solid #e5d8bd;border-radius:22px;padding:22px;box-shadow:0 14px 38px #78582a18}
+header{text-align:center;padding:8px 4px 20px}
+.eyebrow{font:700 11px Arial,sans-serif;letter-spacing:3px;color:var(--gold)}
+h1{font-size:30px;letter-spacing:1px;margin:9px 0 6px}
+header p{font:14px Arial,sans-serif;color:var(--muted);margin:0}
+.event{background:#f1e8dc;border-radius:13px;padding:15px;text-align:center;margin:0 0 20px}
+.event strong{display:block;font:700 18px Arial,sans-serif}
+.event span{display:block;font:13px Arial,sans-serif;color:var(--muted);margin-top:6px}
+label{display:block;font:700 13px Arial,sans-serif;margin:15px 0 7px}
+input,select{width:100%;padding:13px;border:1px solid #d9d0c5;border-radius:10px;background:white;font:15px Arial,sans-serif;color:var(--ink)}
+.price{margin:16px 0;padding:15px;background:white;border:1px solid var(--line);border-radius:12px;font:14px Arial,sans-serif}
+.rowline{display:flex;justify-content:space-between;gap:10px;margin:7px 0}
+.total{border-top:1px solid var(--line);padding-top:11px;margin-top:11px;font-size:19px;font-weight:bold}
+.hint{font:12px/1.55 Arial,sans-serif;color:var(--muted)}
+h2{font-size:19px;margin:22px 0 6px}
+.paygrid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:13px 0}
+.pay{border:0;border-radius:10px;padding:14px 8px;color:white;font:bold 14px Arial,sans-serif;min-height:50px;cursor:pointer}
+.pay:disabled{opacity:.45}.phonepe{background:#5f259f}.gpay{background:#16845b}.paytm{background:#0877b9}.upi{background:#38332e;grid-column:1/-1}
+.paytools{display:flex;gap:9px;margin:12px 0}
+.paytools button{flex:1;border:1px solid var(--line);border-radius:9px;padding:11px 6px;background:#eee8dc;color:var(--ink);font:bold 13px Arial,sans-serif}
+.upibox{text-align:center;background:white;border:1px dashed #c9bba9;border-radius:12px;padding:14px;margin:14px 0}
+.upiid{font:bold 18px Arial,sans-serif;overflow-wrap:anywhere;margin:7px 0}
+.primary{width:100%;border:0;border-radius:11px;background:var(--olive);color:white;font:bold 15px Arial,sans-serif;padding:15px;margin-top:14px;cursor:pointer}
+.primary:disabled{opacity:.55}
+.notice{display:none;white-space:pre-line;padding:14px;border-radius:10px;background:#edf4eb;color:#315b35;font:14px/1.5 Arial,sans-serif;margin-top:14px}
+.error{background:#f9e9e5;color:#8a3327}
+footer{text-align:center;margin-top:16px;color:var(--muted);font:12px Arial,sans-serif}
+.admin{text-align:center;margin-top:14px;font:12px Arial,sans-serif}.admin a{color:var(--olive)}
+@media(max-width:420px){.card{padding:17px}h1{font-size:26px}.pay{font-size:13px}}
+</style>
+</head>
+<body>
+<main><section class="card">
+<header>
+<div class="eyebrow">A TELUGU CULTURAL CLUB</div>
+<h1>RUTHURAGALU</h1>
+<p>Gen Z’s Retro Jamming Session · 2nd Edition</p>
+</header>
+<div class="event">
+<strong>22 November 2026 · Sunday</strong>
+<span>5:30 PM – 8:30 PM · Venue details will be announced</span>
+</div>
+
+<form id="bookingForm">
+<label for="name">Your full name</label>
+<input id="name" name="name" required maxlength="80" autocomplete="name" placeholder="Enter your name">
+<label for="phone">Mobile number</label>
+<input id="phone" name="phone" required inputmode="tel" maxlength="15" autocomplete="tel" placeholder="10-digit mobile number">
+<label for="email">Email (optional)</label>
+<input id="email" name="email" type="email" maxlength="120" autocomplete="email" placeholder="Email address">
+<label for="quantity">Number of tickets</label>
+<select id="quantity" name="quantity">
+<option value="1">1 ticket</option><option value="2">2 tickets</option><option value="3">3 tickets</option><option value="4">4 tickets</option><option value="5">5 tickets</option><option value="6">6 tickets</option><option value="7">7 tickets</option><option value="8">8 tickets</option><option value="9">9 tickets</option><option value="10">10 tickets</option>
+</select>
+
+<div class="price">
+<div class="rowline"><span>Early Bird · ₹299 each</span><strong id="earlyLine">—</strong></div>
+<div class="rowline"><span>Regular · ₹349 each</span><strong id="regularLine">—</strong></div>
+<div class="rowline total"><span>Total payable</span><strong id="totalLine">Loading…</strong></div>
+<p class="hint" id="availability">Checking current ticket availability…</p>
+</div>
+
+<h2>Complete your payment</h2>
+<p class="hint">Choose a UPI option. The selected amount is prefilled where your device supports UPI links. Your phone may show an app chooser instead of opening a specific app.</p>
+<div class="paygrid">
+<button class="pay phonepe" id="phonepe" type="button" disabled onclick="payWithUpi('PhonePe')">PhonePe · ₹<span class="amount">—</span></button>
+<button class="pay gpay" id="gpay" type="button" disabled onclick="payWithUpi('Google Pay')">Google Pay · ₹<span class="amount">—</span></button>
+<button class="pay paytm" id="paytm" type="button" disabled onclick="payWithUpi('Paytm')">Paytm · ₹<span class="amount">—</span></button>
+<button class="pay upi" id="other" type="button" disabled onclick="payWithUpi('UPI')">Other UPI Apps · ₹<span class="amount">—</span></button>
+</div>
+<p class="hint">If the app does not open, use the UPI ID below in your payment app, or scan a QR code if one is provided by the organizer.</p>
+<div class="upibox">
+<div class="hint">Official UPI ID</div>
+<div class="upiid" id="upiId">7306177456@ybl</div>
+<div class="paytools">
+<button type="button" onclick="copyValue('7306177456@ybl','UPI ID copied')">Copy UPI ID</button>
+<button type="button" onclick="copyAmount()">Copy Amount</button>
+</div>
+</div>
+<label for="utr">UTR / Transaction reference</label>
+<input id="utr" name="utr" required maxlength="50" placeholder="Enter UTR after making payment">
+<p class="hint">Submit your payment reference after paying. Your booking remains pending until the organizer verifies the payment. Tickets are issued only after approval.</p>
+<button class="primary" id="submitBtn" type="submit">Submit booking</button>
+</form>
+<div id="result" class="notice" role="status"></div>
+<div class="admin"><a href="https://script.google.com/macros/s/AKfycbw8BjUN-H-i06lOG6qMVufi-KWrMhR45fxSaG6thMPynlgVCMkzedYSOOW4BvzVW9EUow/exec?page=admin" target="_blank" rel="noopener">Organizer login</a></div>
+<footer>Need help? DM @ruthuragalu_vij</footer>
+</section></main>
+<iframe name="rrApiFrame" id="rrApiFrame" title="Booking submission" style="display:none"></iframe>
+<script>
+const API_URL="https://script.google.com/macros/s/AKfycbw8BjUN-H-i06lOG6qMVufi-KWrMhR45fxSaG6thMPynlgVCMkzedYSOOW4BvzVW9EUow/exec";
+const UPI_ID="7306177456@ybl";
+let quote=null, requestNumber=0, waitingForPost=false;
+
+function showMessage(message,isError=false){
+ const box=document.getElementById('result');
+ box.style.display='block';box.className='notice'+(isError?' error':'');box.textContent=message;
+}
+function jsonp(params){
+ return new Promise((resolve,reject)=>{
+  const callback='rrJsonp'+Date.now()+Math.floor(Math.random()*100000);
+  const script=document.createElement('script');
+  const timer=setTimeout(()=>{cleanup();reject(new Error('Could not contact the booking server. Please refresh and try again.'));},15000);
+  function cleanup(){clearTimeout(timer);delete window[callback];script.remove();}
+  window[callback]=(data)=>{cleanup();if(data&&data.error)reject(new Error(data.error));else resolve(data);};
+  params.callback=callback;
+  script.src=API_URL+'?'+new URLSearchParams(params).toString();
+  script.onerror=()=>{cleanup();reject(new Error('Booking server could not be reached.'));};
+  document.head.appendChild(script);
+ });
+}
+async function updateQuote(){
+ const q=Number(document.getElementById('quantity').value);
+ quote=null;setPayButtons(false);
+ document.getElementById('totalLine').textContent='Calculating…';
+ try{
+  const x=await jsonp({api:'quote',quantity:q});
+  quote=x;
+  document.getElementById('earlyLine').textContent=x.earlyQty+' × ₹'+x.earlyPrice+' = ₹'+(x.earlyQty*x.earlyPrice);
+  document.getElementById('regularLine').textContent=x.regularQty+' × ₹'+x.regularPrice+' = ₹'+(x.regularQty*x.regularPrice);
+  document.getElementById('totalLine').textContent='₹'+x.amount;
+  document.getElementById('availability').textContent='Early Bird tickets in this quote: '+x.earlyQty+'. Final allocation is confirmed when your booking is submitted.';
+  document.querySelectorAll('.amount').forEach(el=>el.textContent=x.amount);
+  setPayButtons(true);
+ }catch(err){
+  document.getElementById('totalLine').textContent='Unable to calculate';
+  document.getElementById('availability').textContent=err.message;
+ }
+}
+function setPayButtons(enabled){['phonepe','gpay','paytm','other'].forEach(id=>document.getElementById(id).disabled=!enabled);}
+function payWithUpi(appName){
+ if(!quote||!quote.amount){alert('Please wait for the payable amount to load.');return;}
+ const p=new URLSearchParams({pa:UPI_ID,pn:'Ruthuragalu',am:Number(quote.amount).toFixed(2),cu:'INR',tn:'Ruthuragalu 2nd Jamming Edition'});
+ // Standard UPI URI lets the device choose from installed UPI apps.
+ // The button name is a preference only; browsers cannot force a particular app.
+ window.location.href='upi://pay?'+p.toString();
+}
+function copyValue(value,message){
+ if(navigator.clipboard&&window.isSecureContext){
+  navigator.clipboard.writeText(value).then(()=>alert(message)).catch(()=>prompt('Copy this value:',value));
+ }else prompt('Copy this value:',value);
+}
+function copyAmount(){if(!quote){alert('Please wait for the amount to load.');return;}copyValue(Number(quote.amount).toFixed(2),'Payable amount copied');}
+
+document.getElementById('quantity').addEventListener('change',updateQuote);
+document.getElementById('bookingForm').addEventListener('submit',function(ev){
+ ev.preventDefault();
+ if(!quote){showMessage('Please wait for the ticket amount to load.',true);return;}
+ const utr=document.getElementById('utr').value.trim();
+ if(utr.length<6){showMessage('Please enter a valid UTR / transaction reference after payment.',true);return;}
+ const btn=document.getElementById('submitBtn');btn.disabled=true;btn.textContent='Submitting…';
+ const form=document.createElement('form');form.method='POST';form.action=API_URL;form.target='rrApiFrame';form.style.display='none';
+ const fields={
+  api:'submit',name:document.getElementById('name').value.trim(),
+  phone:document.getElementById('phone').value.trim(),email:document.getElementById('email').value.trim(),
+  quantity:String(document.getElementById('quantity').value),amount:String(quote.amount),utr:utr
+ };
+ Object.entries(fields).forEach(([name,value])=>{const input=document.createElement('input');input.type='hidden';input.name=name;input.value=value;form.appendChild(input);});
+ document.body.appendChild(form);waitingForPost=true;form.submit();form.remove();
+ window.rrBookingTimeout=setTimeout(()=>{
+  if(waitingForPost){waitingForPost=false;btn.disabled=false;btn.textContent='Submit booking';showMessage('We could not confirm the server response. Please check with the organizer before submitting again, to avoid duplicate requests.',true);}
+ },25000);
+});
+window.addEventListener('message',function(event){
+ const frame=document.getElementById('rrApiFrame');
+ if(!frame||event.source!==frame.contentWindow||!event.data||event.data.type!=='RR_BOOKING_RESULT')return;
+ waitingForPost=false;clearTimeout(window.rrBookingTimeout);
+ const btn=document.getElementById('submitBtn');
+ if(event.data.ok){
+  document.getElementById('bookingForm').style.display='none';
+  showMessage('Booking request received!\nBooking ID: '+event.data.bookingId+'\nTickets: '+event.data.quantity+'\nAmount: ₹'+event.data.amount+'\nStatus: Payment verification pending\n\n'+event.data.message,false);
+ }else{
+  btn.disabled=false;btn.textContent='Submit booking';
+  showMessage(event.data.error||'Booking could not be submitted. Please try again.',true);
+  updateQuote();
+ }
+});
+updateQuote();
+</script>
+</body>
+</html>
