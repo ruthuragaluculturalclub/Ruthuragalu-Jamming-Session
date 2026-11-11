@@ -172,6 +172,63 @@ header .brand-title[lang="te"]{
   .stage-label small{font-size:7px}
 }
 
+
+/* One unified title-and-event-details plaque */
+.band-stage{height:250px}
+.stage-title{
+  top:12px;
+  width:min(94%,520px);
+  max-width:94%;
+  padding:10px 16px 11px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:4px;
+  background:linear-gradient(135deg,#a8875cf5,#c3a477f5);
+  border:1px solid #f0d9a8;
+  box-shadow:0 5px 14px #3c291c35,inset 0 0 0 2px #fff4d655;
+  color:#fffdf5;
+  border-radius:14px;
+  letter-spacing:.16em;
+}
+.stage-title span{
+  margin-top:1px;
+  padding-bottom:7px;
+  width:100%;
+  color:#fff3d4;
+  border-bottom:1px solid #f8e7c477;
+  font-size:clamp(15px,3.4vw,23px);
+  letter-spacing:.08em;
+}
+.stage-title .stage-date{
+  margin-top:2px;
+  color:#fffdf5;
+  font:800 clamp(10px,2vw,13px)/1.3 Arial,sans-serif;
+  letter-spacing:.12em;
+}
+.stage-title .stage-time{
+  color:#fff4dc;
+  font:700 clamp(10px,1.9vw,12px)/1.3 Arial,sans-serif;
+  font-style:normal;
+  letter-spacing:.08em;
+}
+.stage-title .stage-venue{
+  color:#fff0d2;
+  font:500 8px/1.3 Arial,sans-serif;
+  letter-spacing:.12em;
+}
+.stage-label{display:none}
+.band-member{bottom:35px;height:105px}
+@media(max-width:520px){
+  .band-stage{height:230px}
+  .stage-title{top:10px;padding:9px 10px 10px;gap:4px}
+  .stage-title span{font-size:15px;letter-spacing:.045em;padding-bottom:6px}
+  .stage-title .stage-date{font-size:10px;letter-spacing:.06em}
+  .stage-title .stage-time{font-size:10px}
+  .stage-title .stage-venue{font-size:7px;letter-spacing:.08em}
+  .band-member{bottom:30px;height:92px}
+}
+
 </style>
 </head>
 <body>
@@ -181,7 +238,7 @@ header .brand-title[lang="te"]{
 <div class="brand-title" lang="te" style="color:#241309!important;-webkit-text-fill-color:#241309!important;background:none!important;opacity:1!important">ఋతురాగాలు</div>
 <h1>RUTHURAGALU</h1>
 <div class="club-label"><span></span>A TELUGU CULTURAL CLUB<span></span></div>
-<div class="band-stage" aria-hidden="true"><div class="stage-lights"></div><div class="band-member one"><span class="head"></span><span class="body"></span><span class="arm"></span><span class="instrument"></span></div><div class="band-member two"><span class="head"></span><span class="body"></span><span class="arm"></span><span class="instrument"></span></div><div class="band-member three"><span class="head"></span><span class="body"></span><span class="arm"></span><span class="instrument"></span></div><span class="band-note n1">♪</span><span class="band-note n2">♫</span><span class="band-note n3">♬</span><div class="stage-title">GEN Z’S <span>RETRO JAMMING SESSION</span></div><div class="stage-label"><strong>22 NOVEMBER 2026 · SUNDAY</strong><span>5:30 PM – 8:30 PM</span><small>VENUE DETAILS WILL BE ANNOUNCED</small></div></div>
+<div class="band-stage" aria-hidden="true"><div class="stage-lights"></div><div class="band-member one"><span class="head"></span><span class="body"></span><span class="arm"></span><span class="instrument"></span></div><div class="band-member two"><span class="head"></span><span class="body"></span><span class="arm"></span><span class="instrument"></span></div><div class="band-member three"><span class="head"></span><span class="body"></span><span class="arm"></span><span class="instrument"></span></div><span class="band-note n1">♪</span><span class="band-note n2">♫</span><span class="band-note n3">♬</span><div class="stage-title">GEN Z’S <span>RETRO JAMMING SESSION</span><strong class="stage-date">22 NOVEMBER 2026 · SUNDAY</strong><em class="stage-time">5:30 PM – 8:30 PM</em><small class="stage-venue">VENUE DETAILS WILL BE ANNOUNCED</small></div></div>
 </header>
 <div class="welcome"><div class="cassette" aria-hidden="true"><span class="cassette-label">RETRO REWIND</span></div><div class="welcome-copy"><div class="welcome-kicker">A LITTLE NOTE FROM RUTHURAGALU</div><div class="welcome-title">Your night. Your music. Your memories.</div><div class="welcome-text">Get ready to rewind the songs, sing along and make new memories with us.</div></div></div>
 
