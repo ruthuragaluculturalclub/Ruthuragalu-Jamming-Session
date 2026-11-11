@@ -775,7 +775,26 @@ header h1{
   </div>
 </div>
 <div class="event-hero realistic-hero">
-<img class="real-instrument real-guitar" src="https://dnznrvs05pmza.cloudfront.net/gemini/gemini-3-pro-image/images/6d3357d3-93f8-4c15-a614-38325e90717e/4ae4a06b-e341-4e62-ba42-3f442ce7997c/A_single_photorealistic_premium_3D_render_of_a_beautiful_vin.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZTU3NGVlY2FlMzE3YmY5ZSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5NDUzNTM3MH0.YCtK1jbyPKHixc7ZZYQolxuap2CEUFs7joPEjgvsq68" alt="Photorealistic vintage guitar and vinyl record">
+<svg class="real-instrument real-guitar" viewBox="0 0 180 230" role="img" aria-label="Vintage electric guitar">
+ <defs>
+  <linearGradient id="guitarBody" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f0d39a"/><stop offset=".35" stop-color="#a86b45"/><stop offset=".7" stop-color="#603b3b"/><stop offset="1" stop-color="#d3a66b"/></linearGradient>
+  <linearGradient id="guitarNeck" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#3a2929"/><stop offset=".5" stop-color="#9a7048"/><stop offset="1" stop-color="#382628"/></linearGradient>
+  <linearGradient id="guitarMetal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff0c8"/><stop offset=".5" stop-color="#bd9258"/><stop offset="1" stop-color="#6b4938"/></linearGradient>
+  <filter id="guitarShadow" x="-50%" y="-30%" width="200%" height="180%"><feGaussianBlur stdDeviation="4"/></filter>
+ </defs>
+ <ellipse cx="91" cy="216" rx="45" ry="7" fill="#08060c" opacity=".35" filter="url(#guitarShadow)"/>
+ <path d="M88 101L104 15Q106 8 113 10L121 12Q126 14 124 21L108 111Z" fill="url(#guitarNeck)" stroke="#c39b67" stroke-width="2"/>
+ <path d="M106 15L119 17M103 29L116 31M100 43L113 45M97 57L110 59M94 71L107 73M91 85L104 87" stroke="#e6c28b" stroke-width="1.5" opacity=".8"/>
+ <path d="M116 12L132 5L137 9L124 20M111 10L110 1L116 0L120 11" fill="url(#guitarMetal)" stroke="#8d6746" stroke-width="1.5"/>
+ <path d="M85 91C65 79 43 91 42 114C25 122 28 151 47 158C49 183 77 194 94 177C111 194 139 182 139 158C158 145 151 119 134 113C132 89 106 80 91 96Z" fill="url(#guitarBody)" stroke="url(#guitarMetal)" stroke-width="4"/>
+ <path d="M88 99L101 105L95 165L81 169Z" fill="url(#guitarNeck)" stroke="#d6b47e" stroke-width="1.5"/>
+ <circle cx="70" cy="139" r="15" fill="#302329" stroke="#e4c28b" stroke-width="3"/>
+ <circle cx="70" cy="139" r="8" fill="#8b5b4b" stroke="#d8b77b" stroke-width="1.5"/>
+ <path d="M84 119L107 123L104 129L82 125Z" fill="#d8b77b" stroke="#5a3b35" stroke-width="1.5"/>
+ <path d="M81 168L104 164L108 173L83 179Z" fill="url(#guitarMetal)" stroke="#5a3b35" stroke-width="1.5"/>
+ <path d="M91 18L105 20M88 33L102 35M85 48L99 50M82 63L96 65M79 78L93 80M76 93L90 95M74 110L111 115M72 117L110 122M72 124L108 129M74 132L106 136M78 143L104 146M82 154L102 157M85 165L99 168" stroke="#f6e1b6" stroke-width=".9" opacity=".82"/>
+ <path d="M58 115Q45 134 56 153" fill="none" stroke="#f7dfae" stroke-width="2" opacity=".4"/>
+</svg>
 <div class="event-hero-copy"><div class="hero-kicker">RUTHURAGALU PRESENTS</div><div class="hero-genz">GEN Z’S</div><div class="hero-session">RETRO JAMMING SESSION</div><div class="hero-rule"></div><strong>22 NOVEMBER 2026 · SUNDAY</strong><span>5:30 PM – 8:30 PM</span><small>VENUE DETAILS WILL BE ANNOUNCED</small></div>
 <svg class="real-instrument real-mic" viewBox="0 0 180 230" role="img" aria-label="Vintage retro studio microphone">
  <defs>
@@ -939,3 +958,8 @@ updateQuote();
 </script>
 </body>
 </html>
+<style>
+/* Guitar is drawn in the same warm metallic studio style as the microphone, not a pasted photo. */
+.event-hero.realistic-hero .real-guitar{object-fit:contain;filter:drop-shadow(0 13px 11px #08060c88);opacity:.96;transform:translateY(4px) scale(.96);}
+@media(max-width:600px){.event-hero.realistic-hero .real-guitar{transform:translateY(5px) scale(.9);}}
+</style>
