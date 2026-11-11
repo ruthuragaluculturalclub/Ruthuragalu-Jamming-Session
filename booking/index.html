@@ -128,6 +128,10 @@ async function updateQuote(){
   document.getElementById('totalLine').textContent='₹'+x.amount;
   document.getElementById('availability').textContent='Early Bird tickets in this quote: '+x.earlyQty+'. Final allocation is confirmed when your booking is submitted.';
   document.querySelectorAll('.amount').forEach(el=>el.textContent=x.amount);
+  const paymentBanner=document.getElementById('paymentSuccess');
+  if(paymentBanner && paymentBanner.style.display==='block'){
+   paymentBanner.innerHTML='UPI ID COPIED!<span style="display:block;font-size:15px;margin-top:8px;letter-spacing:1px">AMOUNT TO PAY</span><strong style="display:block;font-size:30px;line-height:1.3;margin-top:3px">₹'+x.amount+'</strong><span style="display:block;font-size:16px;margin-top:5px">Open any UPI app and pay this exact amount</span>';
+  }
   setPayButtons(true);
   
  }catch(err){
@@ -141,7 +145,7 @@ function payWithUpi(){
  const amount=Number(quote.amount);
  const banner=document.getElementById('paymentSuccess');
  banner.style.display='block';
- banner.innerHTML='UPI ID COPIED!<br><span style="display:block;font-size:15px;margin-top:8px;letter-spacing:1px">AMOUNT TO PAY</span><strong style="display:block;font-size:30px;line-height:1.3;margin-top:3px">₹'+amount+'</strong><span style="display:block;font-size:16px;margin-top:5px">Open any UPI app and pay this exact amount</span>';
+ banner.innerHTML='UPI ID COPIED!<span style="display:block;font-size:15px;margin-top:8px;letter-spacing:1px">AMOUNT TO PAY</span><strong style="display:block;font-size:30px;line-height:1.3;margin-top:3px">₹'+amount+'</strong><span style="display:block;font-size:16px;margin-top:5px">Open any UPI app and pay this exact amount</span>';
  document.getElementById('paymentHelp').textContent='Open PhonePe, Google Pay, Paytm or any UPI app manually. Choose Pay to UPI ID, enter 7306177456@ybl and pay the exact amount shown above. After payment, return here and enter your UTR.';
  copyValue('7306177456@ybl','UPI ID copied to clipboard.');
 }
