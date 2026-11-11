@@ -285,6 +285,49 @@ header .event-hero{display:grid!important}
 .event-hero-copy .hero-genz{font-size:clamp(22px,4vw,34px);color:#57391f}
 .event-hero-copy .hero-session{font-size:clamp(15px,2.5vw,22px);color:#8a5c2b}
 @media(max-width:520px){.event-hero.realistic-hero{grid-template-columns:58px minmax(0,1fr) 68px;min-height:166px;padding:10px 5px;gap:3px}.real-instrument{height:128px}.event-hero-copy{padding:7px 2px}.event-hero-copy .hero-genz{font-size:20px}.event-hero-copy .hero-session{font-size:13px}.event-hero-copy strong{font-size:9px}.event-hero-copy span{font-size:10px}.event-hero-copy small{font-size:7px}}
+
+/* Mobile cassette cleanup: give the Side B artwork room and keep its label readable */
+@media(max-width:520px){
+  .welcome{
+    flex-direction:column;
+    align-items:center;
+    gap:12px;
+    padding:16px 14px;
+    text-align:center;
+  }
+  .cassette{
+    flex:0 0 88px;
+    width:140px;
+    height:88px;
+    max-width:100%;
+    transform:none;
+    margin:2px auto 0;
+  }
+  .cassette:before{
+    left:9px;
+    right:9px;
+    top:9px;
+    padding:5px 3px;
+    font-size:8px;
+    letter-spacing:.8px;
+    white-space:nowrap;
+  }
+  .cassette:after{
+    left:27px;
+    right:27px;
+    bottom:10px;
+    height:25px;
+    background:
+      radial-gradient(circle at 17px 12px,#705a3c 0 7px,transparent 8px),
+      radial-gradient(circle at 59px 12px,#705a3c 0 7px,transparent 8px),
+      linear-gradient(90deg,transparent 47%,#806541 48% 52%,transparent 53%);
+  }
+  .cassette-label{font-size:7px;letter-spacing:2px}
+  .welcome-copy{width:100%}
+  .welcome-title{font-size:16px;line-height:1.35}
+  .welcome-text{max-width:290px;margin:0 auto;line-height:1.55}
+}
+
 </style>
 </head>
 <body>
