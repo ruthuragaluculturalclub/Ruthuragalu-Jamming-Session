@@ -1098,9 +1098,16 @@ header{margin-bottom:8px!important}
 @media(max-width:520px){
   .event-hero-copy .hero-contact{font-size:7px!important;line-height:1.45!important}
 }
+
+/* One-time falling music notes on page entry */
+.music-rain{position:fixed;inset:0;z-index:9999;overflow:hidden;pointer-events:none;contain:layout paint}
+.music-rain .music-note{position:absolute;top:-48px;color:#a77a43;font-family:Georgia,serif;font-size:clamp(20px,3vw,32px);line-height:1;opacity:0;text-shadow:0 1px 3px rgba(104,67,35,.12);animation:music-note-fall var(--fall-time,3.2s) ease-in forwards;will-change:transform,opacity}
+@keyframes music-note-fall{0%{transform:translate3d(0,-20px,0) rotate(-12deg);opacity:0}12%{opacity:.72}78%{opacity:.52}100%{transform:translate3d(var(--drift,24px),105vh,0) rotate(32deg);opacity:0}}
+@media(prefers-reduced-motion:reduce){.music-rain{display:none}}
 </style>
 </head>
 <body>
+<div class="music-rain" aria-hidden="true"></div>
 <main><section class="card">
 <header>
 <div class="brand-title" lang="te">ఋతురాగాలు</div>
@@ -1155,6 +1162,27 @@ header{margin-bottom:8px!important}
 
 </section></main>
 <iframe name="rrApiFrame" id="rrApiFrame" title="Booking submission" style="display:none"></iframe>
+<script>
+(function(){
+  if(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const layer=document.querySelector(".music-rain");
+  if(!layer) return;
+  const notes=["♪","♫","♬","♩"];
+  const count=24;
+  for(let i=0;i<count;i++){
+    const note=document.createElement("span");
+    note.className="music-note";
+    note.textContent=notes[i%notes.length];
+    note.style.left=(2+Math.random()*96)+"%";
+    note.style.setProperty("--fall-time",(2.8+Math.random()*1.7)+"s");
+    note.style.setProperty("--drift",(-35+Math.random()*70)+"px");
+    note.style.animationDelay=(Math.random()*1.1)+"s";
+    note.style.fontSize=(19+Math.random()*17)+"px";
+    layer.appendChild(note);
+  }
+  window.setTimeout(function(){layer.remove();},6500);
+})();
+</script>
 <script>
 const API_URL="https://script.google.com/macros/s/AKfycbw8BjUN-H-i06lOG6qMVufi-KWrMhR45fxSaG6thMPynlgVCMkzedYSOOW4BvzVW9EUow/exec";
 let quote=null, requestNumber=0, waitingForPost=false;
