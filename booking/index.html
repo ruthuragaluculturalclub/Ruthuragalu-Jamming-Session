@@ -72,7 +72,7 @@ footer{text-align:center;margin-top:16px;color:var(--muted);font:12px Arial,sans
 </div>
 
 <h2>Complete your payment</h2>
-<p class="hint">Choose your UPI app. The selected amount and Ruthuragalu UPI ID will be filled in automatically. If the app does not open, use the UPI ID below manually.</p>
+<p class="hint">Tap your preferred app below. We will copy the Ruthuragalu UPI ID and show you the exact amount. Then open that payment app yourself and enter the details manually.</p>
 <div class="paygrid">
 <button class="pay phonepe" id="phonepe" type="button" disabled onclick="payWithUpi('phonepe')">PhonePe · ₹<span class="amount">—</span></button>
 <button class="pay gpay" id="gpay" type="button" disabled onclick="payWithUpi('gpay')">Google Pay · ₹<span class="amount">—</span></button>
@@ -138,16 +138,10 @@ async function updateQuote(){
 function setPayButtons(enabled){['phonepe','gpay','paytm','other'].forEach(id=>document.getElementById(id).disabled=!enabled);}
 function payWithUpi(app){
  if(!quote||!quote.amount){alert('Please wait for the payable amount to load.');return;}
- const params=new URLSearchParams({pa:'7306177456@ybl',pn:'Ruthuragalu',am:Number(quote.amount).toFixed(2),cu:'INR',tn:'Ruthuragalu 2nd Jamming Edition'});
- const isIOS=/iPhone|iPad|iPod/i.test(navigator.userAgent);
- let prefix;
- if(app==='phonepe') prefix=isIOS?'phonepe://upi/pay?':'phonepe://pay?';
- else if(app==='gpay') prefix=isIOS?'gpay://upi/pay?':'tez://upi/pay?';
- else if(app==='paytm') prefix=isIOS?'paytm://upi/pay?':'paytmmp://pay?';
- else prefix='upi://pay?';
- const names={phonepe:'PhonePe',gpay:'Google Pay',paytm:'Paytm',other:'a UPI app'};
- document.getElementById('paymentHelp').textContent='Trying to open '+names[app]+'. If it does not open, copy the UPI ID above and pay manually.';
- window.location.href=prefix+params.toString();
+ const names={phonepe:'PhonePe',gpay:'Google Pay',paytm:'Paytm',other:'your UPI app'};
+ const appName=names[app]||'your UPI app';
+ document.getElementById('paymentHelp').textContent='UPI ID: 7306177456@ybl | Amount to pay: ₹'+quote.amount+'. The UPI ID will be copied. Now open '+appName+' manually, choose Pay to UPI ID, enter the copied ID and this exact amount, then complete payment.';
+ copyValue('7306177456@ybl','UPI ID copied. Open '+appName+' manually and pay exactly ₹'+quote.amount+'.');
 }
 function copyValue(value,message){
  if(navigator.clipboard&&window.isSecureContext){
