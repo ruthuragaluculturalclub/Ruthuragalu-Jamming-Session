@@ -328,18 +328,78 @@ header .event-hero{display:grid!important}
   .welcome-text{max-width:290px;margin:0 auto;line-height:1.55}
 }
 
+
+/* Premium Ruthuragalu identity and retro microphone finish */
+header{padding:26px 18px 22px;background:radial-gradient(ellipse at 50% 0%,#fffdf7 0%,transparent 60%),linear-gradient(145deg,#fffaf0 0%,#f2e4d0 58%,#fbf5e9 100%);border-color:#cdb486;box-shadow:0 15px 34px #593b2b20,inset 0 0 0 4px #fffaf0}
+.brand-lockup{display:flex;align-items:center;justify-content:center;gap:14px;max-width:560px;margin:0 auto 8px;padding:8px 18px 12px;border-bottom:1px solid #c9ad7c}
+.brand-seal{width:62px;height:62px;flex:0 0 62px;filter:drop-shadow(0 4px 5px #4a263022)}
+.brand-seal svg{display:block;width:100%;height:100%}
+.brand-words{text-align:left;min-width:0}
+.brand-title{font-size:clamp(39px,8vw,57px)!important;line-height:1.2!important;letter-spacing:0!important;color:#542b34!important;-webkit-text-fill-color:#542b34!important;text-shadow:0 1px 0 #fff8e9,0 2px 1px #7b4b3628!important}
+header h1{display:inline-block;margin:3px 0 4px;padding:3px 0 2px;font:800 clamp(19px,4vw,26px)/1.15 Arial,sans-serif;letter-spacing:.28em;color:#39252a}
+.brand-words .club-label{justify-content:flex-start;margin:4px 0 0;font:700 9px/1.4 Arial,sans-serif;letter-spacing:.22em;color:#8a6547}
+.brand-words .club-label span{width:19px;background:#b68a55}
+.event-hero.realistic-hero{grid-template-columns:minmax(0,1fr) minmax(220px,2.3fr) minmax(0,1fr);background:linear-gradient(135deg,#fff8e9,#ead8ba 52%,#fff7e8);border-color:#c5a778;box-shadow:inset 0 0 0 4px #fffaf0,0 9px 22px #593b2b18}
+.real-instrument{filter:drop-shadow(0 12px 9px #4b302b35)}
+.real-mic{padding:5px 0 0;transform:rotate(4deg);animation:micFloat 5s ease-in-out infinite}
+@keyframes micFloat{0%,100%{translate:0 2px;rotate:2deg}50%{translate:0 -5px;rotate:-1deg}}
+.event-hero-copy .hero-kicker{font:700 9px Arial,sans-serif;letter-spacing:.24em;color:#9a7047}
+.event-hero-copy .hero-genz{font-weight:900;letter-spacing:.04em;color:#542b34;text-shadow:0 1px 0 #fff5e6}
+.event-hero-copy .hero-session{font-weight:800;letter-spacing:.08em;color:#8b5b35}
+.event-hero-copy .hero-rule{width:58px;height:2px;margin:9px auto;background:linear-gradient(90deg,transparent,#a77a48,transparent)}
+@media(max-width:520px){
+ header{padding:19px 10px 16px}
+ .brand-lockup{gap:9px;padding:5px 4px 10px}
+ .brand-seal{width:48px;height:48px;flex-basis:48px}
+ .brand-title{font-size:clamp(34px,10vw,46px)!important}
+ header h1{font-size:clamp(16px,4.4vw,20px);letter-spacing:.2em}
+ .brand-words .club-label{font-size:7px;letter-spacing:.16em}
+ .brand-words .club-label span{width:11px}
+ .event-hero.realistic-hero{grid-template-columns:54px minmax(0,1fr) 60px;min-height:166px;padding:8px 4px;gap:3px}
+ .real-instrument{height:124px}
+ .real-mic{height:126px;padding:0}
+ .event-hero-copy{padding:6px 1px}
+}
+@media(prefers-reduced-motion:reduce){.real-mic{animation:none}}
+
 </style>
 </head>
 <body>
 <main><section class="card">
 <header>
-<div class="brand-title" lang="te">ఋతురాగాలు</div>
-<h1>RUTHURAGALU</h1>
-<div class="club-label"><span></span>A TELUGU CULTURAL CLUB<span></span></div>
+<div class="brand-lockup">
+  <div class="brand-seal" aria-hidden="true">
+    <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="29" fill="#7d3440"/><circle cx="32" cy="32" r="23" fill="none" stroke="#e9c98f" stroke-width="1.4"/><circle cx="32" cy="32" r="15" fill="none" stroke="#e9c98f" stroke-width="1.2"/><circle cx="32" cy="32" r="4" fill="#e9c98f"/><path d="M32 8v7M32 49v7M8 32h7M49 32h7" stroke="#e9c98f" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </div>
+  <div class="brand-words">
+    <div class="brand-title" lang="te">ఋతురాగాలు</div>
+    <h1>RUTHURAGALU</h1>
+    <div class="club-label"><span></span>A TELUGU CULTURAL CLUB<span></span></div>
+  </div>
+</div>
 <div class="event-hero realistic-hero">
 <img class="real-instrument real-guitar" src="https://dnznrvs05pmza.cloudfront.net/gemini/gemini-3-pro-image/images/6d3357d3-93f8-4c15-a614-38325e90717e/4ae4a06b-e341-4e62-ba42-3f442ce7997c/A_single_photorealistic_premium_3D_render_of_a_beautiful_vin.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZTU3NGVlY2FlMzE3YmY5ZSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5NDUzNTM3MH0.YCtK1jbyPKHixc7ZZYQolxuap2CEUFs7joPEjgvsq68" alt="Photorealistic vintage guitar and vinyl record">
 <div class="event-hero-copy"><div class="hero-kicker">RUTHURAGALU PRESENTS</div><div class="hero-genz">GEN Z’S</div><div class="hero-session">RETRO JAMMING SESSION</div><div class="hero-rule"></div><strong>22 NOVEMBER 2026 · SUNDAY</strong><span>5:30 PM – 8:30 PM</span><small>VENUE DETAILS WILL BE ANNOUNCED</small></div>
-<img class="real-instrument real-piano" src="https://dnznrvs05pmza.cloudfront.net/gemini/gemini-3-pro-image/images/1c59a719-60df-4965-9a3e-38af267690f8/b34b6a8e-c64c-43c9-b06c-8644f494a4e4/A_single_photorealistic_premium_3D_render_of_a_small_elegant.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiODUxMjgxNGYwM2MzM2QzMCIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5NDUzNDQ3OX0.0POHzTLUlzeUJinLXHWpqZhgdP202U5ZucUyogeABCQ" alt="Photorealistic vintage upright piano">
+<svg class="real-instrument real-mic" viewBox="0 0 180 230" role="img" aria-label="Vintage retro studio microphone">
+ <defs>
+  <linearGradient id="micMetal" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f8e7bd"/><stop offset=".28" stop-color="#b98a50"/><stop offset=".55" stop-color="#f1d39a"/><stop offset=".78" stop-color="#8b593e"/><stop offset="1" stop-color="#e9c58a"/></linearGradient>
+  <linearGradient id="micDark" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#4a2830"/><stop offset=".5" stop-color="#9a5a50"/><stop offset="1" stop-color="#482832"/></linearGradient>
+  <filter id="micShadow" x="-40%" y="-30%" width="180%" height="180%"><feGaussianBlur stdDeviation="4"/></filter>
+ </defs>
+ <ellipse cx="91" cy="214" rx="42" ry="7" fill="#54352b" opacity=".18" filter="url(#micShadow)"/>
+ <path d="M88 150v39m-22 7h44" fill="none" stroke="url(#micMetal)" stroke-width="9" stroke-linecap="round"/>
+ <path d="M88 151v36" stroke="#fff0c9" stroke-width="2" opacity=".65"/>
+ <path d="M56 190h64q7 0 7 6t-7 6H56q-7 0-7-6t7-6Z" fill="url(#micDark)" stroke="#d5ae70" stroke-width="2"/>
+ <rect x="48" y="24" width="82" height="137" rx="39" fill="url(#micDark)" stroke="url(#micMetal)" stroke-width="5"/>
+ <rect x="57" y="31" width="64" height="123" rx="30" fill="#3d3030" stroke="#e7c58d" stroke-width="2"/>
+ <path d="M63 48q26-14 52 0M62 57q26-14 54 0M60 66q29-13 58 0M59 75q30-12 60 0M59 84q30-12 60 0M59 93q30-12 60 0M60 102q29-12 58 0M62 111q27-11 54 0M64 120q25-10 50 0" fill="none" stroke="#cda66d" stroke-width="2" opacity=".9"/>
+ <path d="M72 32v119M108 32v119" stroke="#f7dfae" stroke-width="1.5" opacity=".42"/>
+ <path d="M48 132h82" stroke="#e7c58d" stroke-width="3"/>
+ <path d="M49 139q40 14 80 0" fill="none" stroke="#6f4240" stroke-width="5"/>
+ <circle cx="89" cy="146" r="4" fill="#e6c38c"/>
+ <path d="M89 11v10" stroke="#e7c58d" stroke-width="3" stroke-linecap="round"/>
+ <circle cx="89" cy="10" r="4" fill="#f0d9a8"/>
+</svg>
 </div>
 </header>
 <div class="welcome"><div class="cassette" aria-hidden="true"><span class="cassette-label">RETRO REWIND</span></div><div class="welcome-copy"><div class="welcome-kicker">A LITTLE NOTE FROM RUTHURAGALU</div><div class="welcome-title">Your night. Your music. Your memories.</div><div class="welcome-text">Get ready to rewind the songs, sing along and make new memories with us.</div></div></div>
