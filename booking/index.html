@@ -1141,7 +1141,30 @@ header{margin-bottom:8px!important}
 @keyframes music-note-fall{0%{transform:translate3d(0,-20px,0) rotate(-12deg);opacity:0}12%{opacity:.72}78%{opacity:.52}100%{transform:translate3d(var(--drift,24px),105vh,0) rotate(32deg);opacity:0}}
 @media(prefers-reduced-motion:reduce){.music-rain{display:none}}
 </style>
-</head>
+<style>
+/* Old music room palette: warm walnut, aged brass and parchment */
+html,body{background:#e8d7b9!important}
+body{background:radial-gradient(ellipse at 50% 0%,#f3e7d1 0%,#e4d0ae 62%,#d5bd98 100%)!important;color:#39291f!important}
+main > section.card{background:#f8f0e2!important;border-color:#c9ad82!important;box-shadow:0 18px 48px #4b30201c!important}
+main > section.card:after{border-color:#ddc6a0!important}
+header{background:linear-gradient(145deg,#493326 0%,#68452f 48%,#38271f 100%)!important;border-color:#b58b55!important;box-shadow:inset 0 0 0 5px #f2dfbd18,0 18px 34px #39251d38!important}
+header:after{border-color:#d7b77b70!important}
+header .brand-title{color:#513523!important;-webkit-text-fill-color:#513523!important;background:linear-gradient(145deg,#fff2d5,#dfc08d 55%,#f7e5c2)!important;border-color:#c79d61!important;box-shadow:0 5px 0 #6b4934,0 9px 16px #1b100b70,inset 0 2px 0 #fff!important;transform:none!important}
+header h1{color:#f8e9ce!important;-webkit-text-fill-color:#f8e9ce!important;text-shadow:0 2px 0 #9a7047,0 4px 8px #1b100b!important}
+header .club-label{background:linear-gradient(180deg,#f0dfbd,#c6a06b)!important;color:#503622!important;border-color:#d4b17b!important;box-shadow:0 4px 0 #493126,0 7px 10px #160e0b66!important}
+header .club-label span{background:#795638!important}
+header .event-hero{background:linear-gradient(145deg,#ead6b2,#c7a477 52%,#e7d1aa)!important;border-color:#b28b58!important;box-shadow:inset 0 0 0 4px #f8edda,0 10px 22px #39271c35!important}
+header .event-hero:before{border-color:#87634480!important}
+.nostalgia-scene{background:#a77b50!important;border-color:#765033!important;box-shadow:inset 0 0 0 3px #f1dfbd88,0 5px 12px #39271c33!important}
+.scene-caption{background:linear-gradient(90deg,#39271fe8,#65442fe8,#39271fe8)!important;color:#f5e5c5!important}
+header .event-hero-copy{background:linear-gradient(145deg,#fff4dc,#e8d0a7)!important;border-color:#c49b65!important;box-shadow:0 6px 0 #795337,0 10px 16px #39271c35!important}
+header .event-hero-copy .hero-genz{color:#79502e!important}
+header .event-hero-copy .hero-session{color:#4b3020!important}
+.welcome{background:linear-gradient(120deg,#eee0c5,#fff6e5)!important;border-color:#d3b98f!important;box-shadow:0 5px 16px #4b30200e!important}
+.welcome .welcome-kicker,.welcome .welcome-title{color:#67452c!important}
+.card:before{color:#8a63321a!important}
+@media(max-width:600px){header{background:linear-gradient(145deg,#493326,#68452f 48%,#38271f)!important}}
+</style></head>
 <body>
 <div class="music-rain" aria-hidden="true"></div>
 <main><section class="card">
@@ -1151,35 +1174,54 @@ header{margin-bottom:8px!important}
 <div class="club-label"><span></span>A TELUGU CULTURAL CLUB<span></span></div>
 <div class="event-hero">
 <div class="nostalgia-scene" aria-hidden="true">
-<svg viewBox="0 0 760 170" role="presentation" focusable="false">
+<svg viewBox="0 0 760 190" role="presentation" focusable="false">
 <defs>
- <linearGradient id="stationSky" x2="0" y2="1"><stop stop-color="#e7d3ad"/><stop offset="1" stop-color="#b99a70"/></linearGradient>
- <linearGradient id="trainBody" x2="0" y2="1"><stop stop-color="#8d5b4d"/><stop offset="1" stop-color="#4c3435"/></linearGradient>
- <linearGradient id="windowGlow" x2="0" y2="1"><stop stop-color="#f7e6bd"/><stop offset="1" stop-color="#c8a879"/></linearGradient>
+ <linearGradient id="roomWall" x2="0" y2="1"><stop stop-color="#d8bd91"/><stop offset="1" stop-color="#98704d"/></linearGradient>
+ <linearGradient id="woodCabinet" x2="0" y2="1"><stop stop-color="#815238"/><stop offset=".5" stop-color="#553626"/><stop offset="1" stop-color="#35251e"/></linearGradient>
+ <linearGradient id="brass" x2="0" y2="1"><stop stop-color="#f1d69a"/><stop offset=".55" stop-color="#b4874c"/><stop offset="1" stop-color="#76502f"/></linearGradient>
+ <radialGradient id="lampGlow"><stop stop-color="#f8dfaa" stop-opacity=".72"/><stop offset="1" stop-color="#e7c18a" stop-opacity="0"/></radialGradient>
 </defs>
-<rect width="760" height="170" fill="url(#stationSky)"/>
-<path d="M0 0H760V25H0Z" fill="#6e4b3d" opacity=".18"/>
-<path d="M22 132V65Q22 17 72 17H210Q260 17 260 65V132" fill="none" stroke="#795a42" stroke-width="9"/>
-<path d="M42 132V67Q42 37 74 37H208Q240 37 240 67V132" fill="#d8c29b" stroke="#9a7957" stroke-width="3"/>
-<circle cx="140" cy="76" r="43" fill="#ede0c3" stroke="#654b3c" stroke-width="7"/>
-<circle cx="140" cy="76" r="35" fill="#f6e9cc" stroke="#ad8b60" stroke-width="2"/>
-<g stroke="#654b3c" stroke-width="2"><path d="M140 47V53M140 99V105M111 76H117M163 76H169M120 56L124 60M156 92L160 96M160 56L156 60M124 92L120 96"/></g>
-<path d="M140 76L140 53M140 76L157 84" stroke="#59443a" stroke-width="4" stroke-linecap="round"/>
-<circle cx="140" cy="76" r="4" fill="#59443a"/>
-<path d="M0 137H760" stroke="#71543e" stroke-width="5"/>
-<path d="M0 148H760M0 159H760" stroke="#604735" stroke-width="3" opacity=".75"/>
-<g fill="#5e4937"><path d="M0 130H760V137H0Z"/><path d="M30 140l-8 23h18l8-23zm85 0-8 23h18l8-23zm85 0-8 23h18l8-23zm85 0-8 23h18l8-23zm85 0-8 23h18l8-23zm85 0-8 23h18l8-23zm85 0-8 23h18l8-23zm85 0-8 23h18l8-23z"/></g>
-<g transform="translate(286 54)">
- <path d="M0 32Q0 13 21 13H355Q380 13 393 40L408 72H0Z" fill="url(#trainBody)" stroke="#493337" stroke-width="4"/>
- <path d="M15 20H370" stroke="#d6b77f" stroke-width="5"/>
- <path d="M30 27h55v34H30zM100 27h55v34h-55zM170 27h55v34h-55zM240 27h55v34h-55zM310 27h45v34h-45z" fill="url(#windowGlow)" stroke="#493337" stroke-width="4"/>
- <path d="M0 69H408" stroke="#d6b77f" stroke-width="4"/>
- <path d="M386 48h22l17 20h-39z" fill="#493337"/>
- <circle cx="68" cy="76" r="13" fill="#403438" stroke="#d3b17a" stroke-width="5"/><circle cx="340" cy="76" r="13" fill="#403438" stroke="#d3b17a" stroke-width="5"/>
- <path d="M13 88H410" stroke="#f0d5a5" stroke-width="3" opacity=".8"/>
+<rect width="760" height="190" fill="url(#roomWall)"/>
+<path d="M0 0H760V18H0Z" fill="#563b2b" opacity=".55"/>
+<path d="M0 18H760M0 24H760" stroke="#ead3aa" stroke-width="2" opacity=".4"/>
+<path d="M0 153H760V190H0Z" fill="#39271e"/>
+<path d="M0 158H760" stroke="#c49a65" stroke-width="3"/>
+<!-- warm pool of lamplight -->
+<ellipse cx="590" cy="75" rx="170" ry="105" fill="url(#lampGlow)"/>
+<!-- framed old concert photograph -->
+<rect x="40" y="32" width="174" height="104" rx="3" fill="#4a3022" stroke="#d0aa70" stroke-width="5"/>
+<rect x="48" y="40" width="158" height="88" fill="#b99a6e"/>
+<rect x="55" y="47" width="144" height="74" fill="#72543c"/>
+<path d="M55 105Q91 76 122 98T199 91V121H55Z" fill="#3e332b"/>
+<circle cx="124" cy="72" r="16" fill="#d6bb8d" opacity=".8"/>
+<path d="M116 91q9-13 18 0l9 27h-36z" fill="#d2b98d"/>
+<path d="M64 114H190" stroke="#d9c29a" stroke-width="2" opacity=".65"/>
+<!-- wooden record cabinet -->
+<rect x="248" y="77" width="280" height="82" rx="5" fill="url(#woodCabinet)" stroke="#3b281d" stroke-width="4"/>
+<path d="M258 88H518M258 148H518" stroke="#c09055" stroke-width="3" opacity=".7"/>
+<g fill="#d8bd91" opacity=".9"><rect x="266" y="96" width="5" height="48"/><rect x="279" y="92" width="5" height="52"/><rect x="292" y="99" width="5" height="45"/><rect x="305" y="94" width="5" height="50"/><rect x="318" y="97" width="5" height="47"/><rect x="331" y="92" width="5" height="52"/><rect x="344" y="98" width="5" height="46"/></g>
+<!-- stacked vinyl records -->
+<g transform="translate(373 99)">
+ <circle cx="0" cy="0" r="27" fill="#211d1a" stroke="#b98c56" stroke-width="2"/>
+ <circle cx="0" cy="0" r="19" fill="none" stroke="#8d765c" stroke-width="1.2"/>
+ <circle cx="0" cy="0" r="11" fill="none" stroke="#8d765c" stroke-width="1"/>
+ <circle cx="0" cy="0" r="5" fill="#d4b078"/>
+ <circle cx="29" cy="4" r="27" fill="#28211d" stroke="#b98c56" stroke-width="2"/>
+ <circle cx="29" cy="4" r="18" fill="none" stroke="#8d765c" stroke-width="1.2"/>
+ <circle cx="29" cy="4" r="5" fill="#d4b078"/>
 </g>
-<path d="M0 0H760V170H0Z" fill="none" stroke="#6e4b3d" stroke-width="7" opacity=".18"/>
-<g fill="#f7e8c9" opacity=".38"><circle cx="300" cy="22" r="2"/><circle cx="510" cy="31" r="1.6"/><circle cx="690" cy="20" r="2"/></g>
+<!-- vintage tabletop radio -->
+<rect x="555" y="103" width="158" height="52" rx="7" fill="url(#woodCabinet)" stroke="#3b281d" stroke-width="3"/>
+<rect x="566" y="112" width="91" height="30" rx="3" fill="#c9a574" stroke="#4b3222" stroke-width="2"/>
+<g stroke="#745239" stroke-width="1.5" opacity=".8"><path d="M572 116V138M579 116V138M586 116V138M593 116V138M600 116V138M607 116V138M614 116V138M621 116V138M628 116V138M635 116V138M642 116V138"/></g>
+<circle cx="680" cy="127" r="10" fill="url(#brass)" stroke="#2f211b" stroke-width="2"/>
+<circle cx="680" cy="127" r="3" fill="#49301f"/>
+<!-- gramophone silhouette on cabinet -->
+<path d="M570 92Q579 65 610 53Q637 43 648 61Q635 70 612 74Q594 80 589 94Z" fill="url(#brass)" stroke="#5c3c25" stroke-width="3"/>
+<path d="M610 74L603 104" stroke="#5c3c25" stroke-width="5"/>
+<path d="M596 104H624" stroke="#5c3c25" stroke-width="5" stroke-linecap="round"/>
+<path d="M0 172H760" stroke="#b78b58" stroke-width="2" opacity=".65"/>
+<g fill="#f3dfba" opacity=".42"><circle cx="235" cy="48" r="2"/><circle cx="526" cy="38" r="1.5"/><circle cx="730" cy="54" r="2"/></g>
 </svg>
 <div class="scene-caption">A JOURNEY THROUGH THE SONGS WE REMEMBER</div>
 </div><div class="event-hero-copy"><div class="hero-kicker">RUTHURAGALU PRESENTS</div><div class="hero-genz">GEN Z’S</div><div class="hero-session">RETRO JAMMING SESSION</div><div class="hero-rule"></div><strong>22 NOVEMBER 2026 · SUNDAY</strong><span>5:30 PM – 8:30 PM</span><small>VENUE DETAILS WILL BE ANNOUNCED</small><div class="hero-contact">Need help? DM @ruthuragalu_vij&nbsp; | &nbsp;9948315496 / 8328052549</div></div>
