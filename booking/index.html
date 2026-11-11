@@ -24,7 +24,7 @@ input,select{width:100%;padding:13px;border:1px solid #d9d0c5;border-radius:10px
 .rowline{display:flex;justify-content:space-between;gap:10px;margin:7px 0}
 .total{border-top:1px solid var(--line);padding-top:11px;margin-top:11px;font-size:19px;font-weight:bold}
 .hint{font:12px/1.55 Arial,sans-serif;color:var(--muted)}
-#paymentHelp{font:15px/1.65 Arial,sans-serif;font-weight:600;color:var(--ink);background:#fff8e9;border:1px solid #e7d6b6;border-radius:12px;padding:14px 15px;margin:14px 0}
+#paymentHelp{font:15px/1.65 Arial,sans-serif;font-weight:600;color:var(--ink);background:#fff8e9;border:1px solid #e7d6b6;border-radius:12px;padding:14px 15px;margin:14px 0}\n#paymentSuccess{display:none;font:700 17px/1.5 Arial,sans-serif;text-align:center;color:#244b2c;background:#e8f3e6;border:2px solid #9bbd91;border-radius:14px;padding:18px 15px;margin:14px 0}
 .paygrid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:13px 0}
 .pay{border:0;border-radius:10px;padding:14px 8px;color:white;font:bold 14px Arial,sans-serif;min-height:50px;cursor:pointer}
 .phonepe{background:#5f259f}.gpay{background:#16845b}.paytm{background:#0877b9}.upi{background:#38332e;grid-column:1/-1}
@@ -82,7 +82,7 @@ footer{text-align:center;margin-top:16px;color:var(--muted);font:12px Arial,sans
 <div class="upiid" id="upiId">7306177456@ybl</div>
 <p class="hint">Tap the payment button above to copy this UPI ID and view the exact amount.</p>
 </div>
-<p class="hint" id="paymentHelp">After completing payment, return to this page and enter your UTR / transaction reference below. Do not submit until payment is complete.</p>
+<div id="paymentSuccess" role="status" aria-live="polite"></div>\n<p class="hint" id="paymentHelp">After completing payment, return to this page and enter your UTR / transaction reference below. Do not submit until payment is complete.</p>
 <label for="utr">UTR / Transaction reference</label>
 <input id="utr" name="utr" required maxlength="50" placeholder="Enter UTR after making payment">
 <p class="hint">Submit your payment reference after paying. Your booking remains pending until the organizer verifies the payment. Tickets are issued only after approval.</p>
@@ -137,8 +137,11 @@ function setPayButtons(enabled){document.getElementById('copyPayment').disabled=
 function payWithUpi(){
  if(!quote||!quote.amount){alert('Please wait for the payable amount to load.');return;}
  const amount=Number(quote.amount);
- document.getElementById('paymentHelp').textContent='PAYMENT DETAILS — UPI ID: 7306177456@ybl | Amount: ₹'+amount+'. Open PhonePe, Google Pay, Paytm or any UPI app manually. Choose Pay to UPI ID, enter the copied UPI ID and the exact amount shown, then complete payment.';
- copyValue('7306177456@ybl','UPI ID copied! Open any UPI app and pay exactly ₹'+amount+'.');
+ const banner=document.getElementById('paymentSuccess');
+ banner.style.display='block';
+ banner.innerHTML='UPI ID COPIED!<br><span style="font-size:22px">Open any UPI app and pay exactly ₹'+amount+'</span>';
+ document.getElementById('paymentHelp').textContent='Open PhonePe, Google Pay, Paytm or any UPI app manually. Choose Pay to UPI ID, enter 7306177456@ybl and pay the exact amount shown above. After payment, return here and enter your UTR.';
+ copyValue('7306177456@ybl','UPI ID copied to clipboard.');
 }
 function copyValue(value,message){
  if(navigator.clipboard&&window.isSecureContext){
