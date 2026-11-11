@@ -229,16 +229,40 @@ header .brand-title[lang="te"]{
   .band-member{bottom:30px;height:92px}
 }
 
+
+/* Compact event hero with two gentle side animations */
+.event-hero{position:relative;display:grid;grid-template-columns:minmax(72px,1fr) minmax(0,3.2fr) minmax(100px,1.25fr);align-items:center;gap:8px;max-width:760px;min-height:190px;margin:17px auto 2px;padding:18px 14px;border:1px solid #d4bd94;border-radius:20px;background:linear-gradient(120deg,#f8efdf,#ead8b8 48%,#f8efdf);box-shadow:inset 0 0 0 4px #fff9ed,0 8px 20px #75552a12;overflow:hidden}
+.event-hero:before{content:"";position:absolute;inset:8px;border:1px solid #ddc9a5;border-radius:13px;pointer-events:none}
+.event-hero-copy{position:relative;z-index:1;text-align:center;min-width:0;color:#49331f}
+.hero-kicker{font:700 9px Arial,sans-serif;letter-spacing:.23em;color:#987342;margin-bottom:8px}
+.hero-genz{font:800 clamp(16px,3vw,22px)/1.1 Arial,sans-serif;letter-spacing:.22em;color:#79552e}
+.hero-session{font:700 clamp(17px,3.3vw,25px)/1.15 Georgia,serif;letter-spacing:.055em;color:#49301d;margin:4px 0 8px}
+.hero-rule{width:72%;height:1px;margin:0 auto 9px;background:linear-gradient(90deg,transparent,#b28c55,transparent)}
+.event-hero-copy strong{display:block;font:800 clamp(10px,1.8vw,13px)/1.4 Arial,sans-serif;letter-spacing:.1em;color:#604526}
+.event-hero-copy span{display:block;margin-top:4px;font:700 12px Arial,sans-serif;color:#765b39}
+.event-hero-copy small{display:block;margin-top:6px;font:500 8px Arial,sans-serif;letter-spacing:.12em;color:#8c704c}
+.hero-instrument{position:relative;z-index:1;display:flex;align-items:center;justify-content:center}
+.hero-instrument svg{display:block;width:100%;height:auto;max-height:142px;filter:drop-shadow(0 5px 4px #674a2820)}
+.guitar-motion{animation:guitarFloat 3.4s ease-in-out infinite}
+.piano-motion{animation:pianoFloat 3.8s ease-in-out infinite}
+@keyframes guitarFloat{0%,100%{transform:translateY(2px) rotate(-5deg)}50%{transform:translateY(-7px) rotate(2deg)}}
+@keyframes pianoFloat{0%,100%{transform:translateY(-2px) rotate(2deg)}50%{transform:translateY(5px) rotate(-2deg)}}
+@media(max-width:520px){.event-hero{grid-template-columns:54px minmax(0,1fr) 76px;gap:4px;min-height:156px;padding:14px 8px;margin-top:13px;border-radius:16px}.hero-instrument svg{max-height:104px}.hero-kicker{font-size:7px;letter-spacing:.14em;margin-bottom:6px}.hero-genz{font-size:15px;letter-spacing:.16em}.hero-session{font-size:clamp(14px,4.1vw,19px);letter-spacing:.015em;margin:3px 0 7px}.event-hero-copy strong{font-size:9px;letter-spacing:.04em}.event-hero-copy span{font-size:10px}.event-hero-copy small{font-size:6px;letter-spacing:.06em}}
+@media(prefers-reduced-motion:reduce){.guitar-motion,.piano-motion{animation:none}}
+
 </style>
 </head>
 <body>
-<div class="music-backdrop" aria-hidden="true"><svg class="instrument-art guitar-art" viewBox="0 0 220 620" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="#8b6536" stroke-linecap="round" stroke-linejoin="round"><path d="M105 30 L143 44 L128 220 C163 246 176 285 155 327 C139 360 106 376 79 357 C39 369 8 343 13 302 C16 269 41 246 75 237 Z" fill="#c69a5d" fill-opacity=".55" stroke-width="3"/><path d="M104 31 L144 44 L159 10 L119 0 Z" fill="#9a6c37" fill-opacity=".6" stroke-width="3"/><ellipse cx="90" cy="304" rx="31" ry="35" fill="#493d2b" fill-opacity=".85" stroke-width="3"/><ellipse cx="90" cy="304" rx="22" ry="26" stroke="#e2c48e" stroke-width="3"/><path d="M112 20 L92 282 M120 22 L100 282 M128 25 L108 282 M136 28 L116 282" stroke="#f7e6c6" stroke-width="1.4"/><path d="M100 78 L145 91 M96 116 L141 129 M92 154 L137 167 M88 192 L133 205 M82 230 L127 243" stroke="#5c472d" stroke-width="2"/></g></svg><svg class="instrument-art piano-art" viewBox="0 0 340 230" xmlns="http://www.w3.org/2000/svg"><g transform="rotate(-16 170 115)" stroke="#8b6536" stroke-width="3" stroke-linejoin="round"><rect x="12" y="32" width="316" height="164" rx="16" fill="#b88b4f" fill-opacity=".34"/><g fill="#fff9ed"><rect x="27" y="47" width="38" height="132" rx="3"/><rect x="67" y="47" width="38" height="132" rx="3"/><rect x="107" y="47" width="38" height="132" rx="3"/><rect x="147" y="47" width="38" height="132" rx="3"/><rect x="187" y="47" width="38" height="132" rx="3"/><rect x="227" y="47" width="38" height="132" rx="3"/><rect x="267" y="47" width="38" height="132" rx="3"/></g><g fill="#504333" stroke="#504333"><rect x="54" y="47" width="23" height="82" rx="3"/><rect x="94" y="47" width="23" height="82" rx="3"/><rect x="174" y="47" width="23" height="82" rx="3"/><rect x="214" y="47" width="23" height="82" rx="3"/><rect x="254" y="47" width="23" height="82" rx="3"/></g></g></svg><span class="float-note note-one">♪</span><span class="float-note note-two">♫</span><span class="float-note note-three">♬</span></div>
 <main><section class="card">
 <header>
 <div class="brand-title" lang="te" style="color:#241309!important;-webkit-text-fill-color:#241309!important;background:none!important;opacity:1!important">ఋతురాగాలు</div>
 <h1>RUTHURAGALU</h1>
 <div class="club-label"><span></span>A TELUGU CULTURAL CLUB<span></span></div>
-<div class="band-stage" aria-hidden="true"><div class="stage-lights"></div><div class="band-member one"><span class="head"></span><span class="body"></span><span class="arm"></span><span class="instrument"></span></div><div class="band-member two"><span class="head"></span><span class="body"></span><span class="arm"></span><span class="instrument"></span></div><div class="band-member three"><span class="head"></span><span class="body"></span><span class="arm"></span><span class="instrument"></span></div><span class="band-note n1">♪</span><span class="band-note n2">♫</span><span class="band-note n3">♬</span><div class="stage-title">GEN Z’S <span>RETRO JAMMING SESSION</span><strong class="stage-date">22 NOVEMBER 2026 · SUNDAY</strong><em class="stage-time">5:30 PM – 8:30 PM</em><small class="stage-venue">VENUE DETAILS WILL BE ANNOUNCED</small></div></div>
+<div class="event-hero">
+<div class="hero-instrument guitar-motion" aria-hidden="true"><svg viewBox="0 0 120 190"><g stroke="#805b32" stroke-width="3" stroke-linejoin="round"><path d="M54 8h18v50c18 9 28 24 25 43-2 14-12 23-25 27-5 22-29 32-48 20-19-12-19-39-2-52-3-16 4-31 18-39V8z" fill="#c79553"/><path d="M50 8h27V3H50z" fill="#79532e"/><circle cx="61" cy="102" r="17" fill="#4f3a27"/><circle cx="61" cy="102" r="11" fill="none" stroke="#e9d3a8"/><path d="M57 7v111m5-111v111m5-111v111m5-111v111" stroke="#f8e8c9" stroke-width="1.2"/></g></svg></div>
+<div class="event-hero-copy"><div class="hero-kicker">RUTHURAGALU PRESENTS</div><div class="hero-genz">GEN Z’S</div><div class="hero-session">RETRO JAMMING SESSION</div><div class="hero-rule"></div><strong>22 NOVEMBER 2026 · SUNDAY</strong><span>5:30 PM – 8:30 PM</span><small>VENUE DETAILS WILL BE ANNOUNCED</small></div>
+<div class="hero-instrument piano-motion" aria-hidden="true"><svg viewBox="0 0 190 120"><g stroke="#805b32" stroke-width="3" stroke-linejoin="round"><rect x="7" y="20" width="176" height="83" rx="9" fill="#b88b4f"/><g fill="#fff9ed"><rect x="16" y="29" width="22" height="65" rx="2"/><rect x="39" y="29" width="22" height="65" rx="2"/><rect x="62" y="29" width="22" height="65" rx="2"/><rect x="85" y="29" width="22" height="65" rx="2"/><rect x="108" y="29" width="22" height="65" rx="2"/><rect x="131" y="29" width="22" height="65" rx="2"/><rect x="154" y="29" width="20" height="65" rx="2"/></g><g fill="#504333" stroke="#504333"><rect x="31" y="29" width="13" height="40" rx="2"/><rect x="54" y="29" width="13" height="40" rx="2"/><rect x="100" y="29" width="13" height="40" rx="2"/><rect x="123" y="29" width="13" height="40" rx="2"/><rect x="146" y="29" width="13" height="40" rx="2"/></g></g></svg></div>
+</div>
 </header>
 <div class="welcome"><div class="cassette" aria-hidden="true"><span class="cassette-label">RETRO REWIND</span></div><div class="welcome-copy"><div class="welcome-kicker">A LITTLE NOTE FROM RUTHURAGALU</div><div class="welcome-title">Your night. Your music. Your memories.</div><div class="welcome-text">Get ready to rewind the songs, sing along and make new memories with us.</div></div></div>
 
