@@ -646,6 +646,119 @@ header h1{
  .event-hero-copy small{font-size:5.5px!important;letter-spacing:.035em!important;padding:5px 6px!important}
 }
 
+
+/* Vintage 3D typography treatment for the brand and event title */
+header{
+  background:
+    radial-gradient(ellipse at 50% 0%,#77536a55 0%,transparent 54%),
+    linear-gradient(150deg,#211b25 0%,#342331 52%,#1b1921 100%) !important;
+  border:1px solid #b88e60 !important;
+  box-shadow:inset 0 0 0 5px #d6b27b12,inset 0 1px 0 #fff3d322,0 22px 40px #120d18a0 !important;
+  color:#f7e8ca !important;
+}
+header:before{border-color:#c9a57455 !important}
+.brand-lockup{
+  display:flex !important;flex-direction:column !important;align-items:center !important;
+  justify-content:center !important;gap:5px !important;padding:4px 8px 22px !important;
+  margin:0 auto 18px !important;
+}
+.brand-seal{display:none !important}
+.brand-words{text-align:center !important;width:100% !important}
+header .brand-title,header .brand-title[lang="te"]{
+  display:block !important;margin:0 auto 5px !important;
+  font-family:"Noto Serif Telugu","Gautami","Nirmala UI",serif !important;
+  font-size:clamp(48px,10vw,76px) !important;line-height:1.32 !important;
+  font-weight:900 !important;letter-spacing:.015em !important;
+  color:#f4d59d !important;-webkit-text-fill-color:#f4d59d !important;
+  background:none !important;
+  text-shadow:
+    0 1px 0 #fff0c9,0 2px 0 #d2a66e,0 4px 0 #986846,
+    0 6px 0 #593b40,0 9px 13px #08060b,0 0 22px #e8c68b35 !important;
+}
+header h1{
+  margin:3px 0 7px !important;
+  font-family:Georgia,"Times New Roman",serif !important;
+  font-size:clamp(26px,5.4vw,42px) !important;
+  font-weight:900 !important;letter-spacing:.24em !important;
+  color:#fff3dc !important;-webkit-text-fill-color:#fff3dc !important;
+  text-shadow:0 1px 0 #fff,0 3px 0 #c6a77a,0 5px 0 #72513f,0 8px 12px #08060c !important;
+}
+.brand-words .club-label{
+  justify-content:center !important;margin:9px auto 0 !important;
+  color:#d9bc91 !important;font:700 10px/1.5 Arial,sans-serif !important;
+  letter-spacing:.34em !important;text-shadow:0 2px 4px #08060c !important;
+}
+.brand-words .club-label span{
+  width:34px !important;background:linear-gradient(90deg,transparent,#d7b27a) !important;
+}
+.brand-words .club-label span:last-child{
+  background:linear-gradient(90deg,#d7b27a,transparent) !important;
+}
+.event-hero.realistic-hero{
+  min-height:330px !important;
+  background:
+    radial-gradient(ellipse at 50% 50%,#6b4b5a55 0%,transparent 60%),
+    linear-gradient(145deg,#201a24 0%,#382635 48%,#1c1922 100%) !important;
+  border:1px solid #c49a69 !important;
+  box-shadow:inset 0 0 0 5px #e9c99112,inset 0 1px 0 #fff2d52b,0 18px 32px #08060c8c !important;
+}
+.event-hero.realistic-hero:before{border-color:#d8b77b66 !important}
+.event-hero-copy{
+  padding:24px 14px 20px !important;
+  background:linear-gradient(145deg,#f8e8c9 0%,#d9b987 52%,#f0d8ae 100%) !important;
+  border:1px solid #f0d4a1 !important;border-radius:13px !important;
+  box-shadow:0 13px 0 #704d43,0 19px 24px #09060d9c,inset 0 2px 0 #fff8e7 !important;
+  transform:perspective(900px) rotateX(2deg) !important;
+}
+.event-hero-copy .hero-kicker{
+  color:#77505a !important;font:900 10px Arial,sans-serif !important;
+  letter-spacing:.28em !important;text-shadow:0 1px 0 #fff5df !important;
+}
+.event-hero-copy .hero-genz{
+  color:#633c4b !important;font:950 clamp(34px,5.5vw,52px)/1 Arial,sans-serif !important;
+  letter-spacing:.035em !important;
+  text-shadow:0 1px 0 #fff7e7,0 3px 0 #c9a477,0 5px 0 #8c5c56,0 8px 12px #573b453d !important;
+}
+.event-hero-copy .hero-session{
+  color:#593847 !important;font:900 clamp(17px,3vw,27px)/1.12 Georgia,serif !important;
+  letter-spacing:.055em !important;
+  text-shadow:0 1px 0 #fff7e7,0 3px 0 #c5a27a,0 5px 7px #5639443d !important;
+}
+.event-hero-copy .hero-rule{
+  height:2px !important;background:linear-gradient(90deg,transparent,#8b5b59,#d0a66c,#8b5b59,transparent) !important;
+}
+.event-hero-copy strong{
+  color:#49303e !important;font:900 clamp(11px,1.9vw,15px)/1.45 Arial,sans-serif !important;
+  letter-spacing:.09em !important;text-shadow:0 1px 0 #fff1d8 !important;
+}
+.event-hero-copy span{
+  color:#704653 !important;font:900 14px Arial,sans-serif !important;
+  text-shadow:0 1px 0 #fff1d8 !important;
+}
+.event-hero-copy small{
+  color:#6a4a4a !important;background:#fff6e5 !important;
+  border:1px solid #b78d67 !important;box-shadow:0 2px 0 #a47a5e !important;
+  font:800 8px Arial,sans-serif !important;letter-spacing:.12em !important;
+}
+@media(max-width:600px){
+  .brand-lockup{padding:3px 2px 16px !important;margin-bottom:12px !important}
+  header .brand-title{font-size:clamp(42px,12vw,58px) !important}
+  header h1{font-size:clamp(21px,6vw,29px) !important;letter-spacing:.17em !important}
+  .brand-words .club-label{font-size:7px !important;letter-spacing:.18em !important;gap:6px !important}
+  .brand-words .club-label span{width:15px !important}
+  .event-hero.realistic-hero{
+    min-height:238px !important;grid-template-columns:40px minmax(0,1fr) 45px !important;
+    padding:12px 3px !important;gap:2px !important;
+  }
+  .event-hero-copy{padding:15px 5px 13px !important;box-shadow:0 7px 0 #704d43,0 12px 15px #09060d8c,inset 0 2px 0 #fff8e7 !important}
+  .event-hero-copy .hero-kicker{font-size:6px !important;letter-spacing:.11em !important}
+  .event-hero-copy .hero-genz{font-size:clamp(22px,6.2vw,30px) !important}
+  .event-hero-copy .hero-session{font-size:clamp(12px,3.4vw,16px) !important}
+  .event-hero-copy strong{font-size:8px !important;letter-spacing:.025em !important}
+  .event-hero-copy span{font-size:10px !important}
+  .event-hero-copy small{font-size:5.5px !important;letter-spacing:.025em !important;padding:5px 5px !important}
+}
+
 </style>
 </head>
 <body>
